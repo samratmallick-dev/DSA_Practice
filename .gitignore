@@ -1,1 +1,20 @@
-.exe
+# ===== Build files =====
+*.o
+*.obj
+*.out
+*.exe
+*.dll
+*.so
+*.a
+*.lib
+
+# ===== CMake =====
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# ===== IDE / Editor files =====
+.vscode/
+.idea/
+*.code-workspace
