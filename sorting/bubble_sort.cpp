@@ -17,16 +17,21 @@ void bubbleSortAscendingOrder(int arr[], int n)
             if (!swapped)
                   break;
       }
+      cout << "Sorted array asscending: ";
+      for (int i = 0; i < n; i++) {
+            cout << arr[i] << " ";
+      }
+      cout << endl;
 }
 
 void bubbleSortDescendingOrder(int arr[], int n)
 {
       for (int i = 0; i < n - 1; i++)
       {
-             bool swapped = false;
+            bool swapped = false;
             for (int j = n - 1; j > i; j--)
             {
-                  if (arr[j - 1] > arr[j])
+                  if (arr[j - 1] < arr[j])
                   {
                         swap(arr[j - 1], arr[j]);
                         swapped = true;
@@ -35,6 +40,11 @@ void bubbleSortDescendingOrder(int arr[], int n)
             if (!swapped)
                   break;
       }
+      cout << "Sorted array decending: ";
+      for (int i = 0; i < n; i++) {
+            cout << arr[i] << " ";
+      }
+      cout << endl;
 }
 
 int main()
@@ -50,11 +60,5 @@ int main()
 
       bubbleSortAscendingOrder(arr, n);
       bubbleSortDescendingOrder(arr, n);
-
-      for (int i = 0; i < n; i++)
-      {
-            cout << arr[i] << " ";
-      }
-
       return 0;
 }
