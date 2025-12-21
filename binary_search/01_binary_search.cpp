@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-void binarySearch(int arr[], int n, int key)
+void binarySearchIncresingOrder(int arr[], int n, int key)
 {
       int start = 0, end = n - 1;
 
@@ -15,6 +15,31 @@ void binarySearch(int arr[], int n, int key)
                   return;
             }
             else if (arr[mid] < key)
+            {
+                  start = mid + 1;
+            }
+            else
+            {
+                  end = mid - 1;
+            }
+      }
+
+      cout << "Element not found in the array" << endl;
+}
+void binarySearchDecresingOrder(int arr[], int n, int key)
+{
+      int start = 0, end = n - 1;
+
+      while (start <= end)
+      {
+            int mid = start + (end - start) / 2;
+
+            if (arr[mid] == key)
+            {
+                  cout << "Element found at index " << mid << endl;
+                  return;
+            }
+            else if (arr[mid] > key)
             {
                   start = mid + 1;
             }
@@ -44,6 +69,7 @@ int main()
       cout << "Enter the element to be searched: ";
       cin >> key;
 
-      binarySearch(arr, n, key);
+      binarySearchIncresingOrder(arr, n, key);
+      binarySearchDecresingOrder(arr, n, key);
       return 0;
 }
